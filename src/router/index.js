@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Vue from 'vue'
 import Router from 'vue-router'
 import AddNotes from '@/components/AddNotes'
@@ -20,3 +21,21 @@ export default new Router({
   ],
   mode: 'history'
 })
+||||||| merged common ancestors
+=======
+import Vue from 'vue'
+import Router from 'vue-router'
+import HelloWorld from '@/components/HelloWorld'
+
+Vue.use(Router)
+
+export default new Router({
+  routes: [
+    {
+      path: '/',
+      name: 'HelloWorld',
+      component: HelloWorld
+    }
+  ]
+})
+>>>>>>> cc41daa3bb1e5de003e4434ff1b0cd37a389debb
