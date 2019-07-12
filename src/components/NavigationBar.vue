@@ -1,12 +1,23 @@
 <template>
   <div>
     <!--Navigation bar-->
-    <header>
-      <nav id="nav-items">
-        <router-link class="navigate" to="/add-notes">Add Notes</router-link>
-        <router-link class="navigate" to="/">My Notes</router-link>
-      </nav>
-    </header>
+    <nav class="navbar navbar-expand-lg  fixed-top navbar-dark" style="background-color:#64c746;">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Notes</a>
+        </div>
+        <div class="collapse navbar-collapse " id="navbarNav">
+          <ul class="nav navbar-nav ">
+            <li class="nav-item">
+              <router-link class="nav-link" style="color:white;" :to="{ name: 'MyNotes', params: {} }">My Notes</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" style="color:white;" :to="{ name: 'AddNotes', params: {} }">Add Notes</router-link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </div>
 </template>
 
@@ -18,29 +29,4 @@ export default {
 </script>
 
 <style scoped>
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    background-color: white;
-    display: flex;
-    align-items:center;
-    box-shadow: 0 0 25px 0 black;
-  }
-
-  header * {
-    display: inline;
-  }
-
-  header nav {
-    text-align: right;
-  }
-
-  .navigate {
-    margin: 10px;
-    text-decoration: none;
-  }
 </style>
-
