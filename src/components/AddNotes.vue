@@ -1,13 +1,17 @@
 <template>
   <div class="add-notes">
     <h1>Add Notes</h1>
-    <div>
-      <label for="title" id="title-label">Title:</label>
-      <input type="text" name="title" v-model="note.title" size="35"><br><br>
-      <label for="content" id="content-label">Content:</label>
-      <textarea name="content" v-model="note.content" id="note-content" cols="29" rows="10"></textarea>
-    </div>
-    <button v-on:click="addnotes" id="AddNotes">Add Notes</button>
+    <form class="note-form" action="index.html" method="post">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" name="title" value="" v-model="note.title" class="form-control" id="title">
+      </div>
+      <div class="form-group">
+        <label for="content">Content</label>
+        <textarea name="content" class="form-control" id="content" rows="8"></textarea>
+      </div>
+      <button v-on:click="addnotes" type="submit" class="btn" style="background-color:#64c746;color:white" name="button">Add notes</button>
+    </form>
   </div>
 </template>
 
