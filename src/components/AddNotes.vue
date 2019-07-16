@@ -1,17 +1,17 @@
 <template>
   <div class="add-notes">
     <h1>Add Notes</h1>
-    <form class="note-form" action="index.html" method="post">
+    <form class="note-form">
       <div class="form-group">
         <label for="title">Title</label>
         <input type="text" name="title" value="" v-model="note.title" class="form-control" id="title">
       </div>
       <div class="form-group">
         <label for="content">Content</label>
-        <textarea name="content" class="form-control" id="content" rows="8"></textarea>
+        <textarea name="content" class="form-control" v-model="note.content" id="content" rows="8"></textarea>
       </div>
-      <button v-on:click="addnotes" type="submit" class="btn" style="background-color:#64c746;color:white" name="button">Add notes</button>
     </form>
+    <button v-on:click="addnotes" class="btn" style="background-color:#64c746;color:white" name="button">Add notes</button>
   </div>
 </template>
 
@@ -19,8 +19,11 @@
 //importing the firebase instance created in the firebase.js file
 import { db }  from '../config'
 
+
 export default {
   name: 'AddNotes',
+  components: {
+  },
   data () {
     return {
       note: {
