@@ -1,13 +1,19 @@
 <template>
-  <div class="my-notes">
-    <h1>Notes</h1>
-    <div v-for="(anote,idx) in notes" :key="idx" class="card  mb-3" style="width:30rem;">
+  <div class="my-notes" style="margin-top:80px;">
+    <div id="cardid" class="card" style="width:40rem;">
+      <div class="card-header">
+        Notes
+      </div>
       <div class="card-body">
-        <h5 class="card-title">{{anote.noteinfo.data().note.title}}</h5>
-        <p class="card-text">{{anote.noteinfo.data().note.content}}</p>
-        <p class="card-text">{{anote.noteinfo.data().date}}</p>
-        <div class="text-right">
-          <p @click="deletenote(anote.noteinfo.id)" class="btn text-white" style="background-color:#64c746">Delete</p>
+        <div v-for="(anote,idx) in notes" :key="idx" class="card  mb-3" style="width:30rem; margin-left: 55px">
+          <div class="card-body">
+            <h5 class="card-title">{{anote.noteinfo.data().note.title}}</h5>
+            <p class="card-text">{{anote.noteinfo.data().note.content}}</p>
+            <p class="card-text">{{anote.noteinfo.data().date}}</p>
+            <div class="text-right">
+              <p @click="deletenote(anote.noteinfo.id)" class="btn text-white" style="background-color:#64c746">Delete</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -58,13 +64,11 @@ export default {
 </script>
 
 <style scoped>
-div .my-notes {
- margin: 60px 400px;
+#cardid {
+ margin: 0 auto;
+ width: 90%;
+
 }
 
-h1 {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  margin-left: 100px;
-}
+
 </style>
