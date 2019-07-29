@@ -46,6 +46,10 @@ export default {
         date: this.date
       }).then(function(docRef){
         console.log("Note added with id " + docRef.id);
+        setInterval(() => {
+          // do nothing
+        }, 8000)
+        window.location = window.location
       }).catch(function(error){
         console.error(error);
       })
